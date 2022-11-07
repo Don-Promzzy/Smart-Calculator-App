@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    transition: all 0.5s ease;
+}
+
+body {
+    background: #1E1E1E;
+    font-family: Helvetica, sans-serif;
+}
+
+/* App center align  */
+.app-container,
+.app-calculator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Next page to the calculator app */
+.app-calculator.activeCalculator {
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
+}
+
+/* The start up container style */
+.app-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    width: 320px;
+    height: 570px;
+    border-radius: 50px;
+}
+
+.app-design {
+    position: absolute;
+    width: 180px;
+    height: 226px;
+    left: 72px;
+    top: 2px;
+    background: linear-gradient(180deg, rgba(96, 168, 227, 0.37) 0%, rgba(96, 168, 227, 0.05) 100%);
+}
+
+.app-gif img {
+    width: 200px;
+    height: auto;
+    margin-top: 10px;
+}
+
+.app_title h1 {
+    font-family: sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    min-width: max-content;
+    margin-bottom: 10px;
+}
+
+.text-zone p {
+    font-size: 14px;
+    color: #192424;
+    text-align: center; 
+    margin-bottom: 10px;
+}
+
+.app-button button {
+    font-size: 15px;
+    color: #fff;
+    background: #0767b5;
+    width: 120px;
+    height: 40px;
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    border-radius: 20px; 
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.app-button button:hover {
+    background-color: #60A8E3;
+}
+
+/* App calculator style */
+.app-calculator {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 322px;
+    height: 574px;
+    background-color: #000;
+    box-shadow: 0 0 30px #000;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 50px;
+}
+
+/* Top toggle button code */
+.toggle-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 30px;
+    height: 30px;
+    background-color: #60A8E3;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.toggle-btn::before {
+    content: '\f185';
+    font-family: fontAwesome;
+}
+
+/* The display screen style */
+.display-screen {
+    position: absolute;
+    left: 21px;
+    top: 18px;
+    width: 280px;
+    height: 190px;
+    background: #192424;
+    border-radius: 50px;
+}
+
+/* App display content */
+#display {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 50px;
+    height: 150px;
+    width: auto;
+    max-width: 270px;
+    margin: 20px 20px;
+    margin-bottom: 20px;
+    overflow-x: scroll;
+    pointer-events: none;
+}
+
+#display::-webkit-scrollbar {
+    display: block;
+    height: 3px;
+}
+
+.edit-placeholder[contentEditable="true"]:empty:not(:focus):before {
+    content: attr(placeholder);
+}
+
+/* The calculator buttons */
+.cal-buttons button {
+    position: relative;
+    top: 105px;
+    height: 55px;
+    width: 55px;
+    margin: 5px;
+    font-size: 20px;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+.cal-buttons button:hover {
+    transform: scale(1.1);
+}
+
+/* Light theme */
+
+.app-calculator.dark .toggle-btn::before {
+    content: '\f186';
+    font-family: fontAwesome;
+}
+
+.app-calculator {
+    background-color: #fff;
+}
+
+.app-calculator #display {
+    color: #ffffff;
+}
+
+.app-calculator button.top_operator-btn {
+    background-color: #a5a5a5;
+    color: #333333;
+}
+.app-calculator button.right_operator-btn {
+    background-color: #fea00b;
+    color: #fffffb;
+}
+
+.app-calculator button.btn_number {
+    background-color: #333333;
+    color: #fcfcfc;
+}
+
+/* Dark theme */
+
+.app-calculator.dark {
+    background-color: #071115;
+}
+    
+.app-calculator.dark #display {
+color: #f8fafb;
+}
+
+.app-calculator button.top_operator-btn {
+    background-color: #a5a5a5;
+    color: #333333;
+}
+.app-calculator button.right_operator-btn {
+    background-color: #fea00b;
+    color: #fffffb;
+}
+
+.app-calculator button.btn_number {
+    background-color: #333333;
+    color: #fcfcfc;
+}
+
+
+
